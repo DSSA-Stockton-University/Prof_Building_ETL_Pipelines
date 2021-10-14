@@ -1,0 +1,6 @@
+Pipfile
+Pipfile.lock
+.vscode
+.pytest_cache
+*__pycache__*
+debug.logs
