@@ -179,6 +179,7 @@ Example of adding environment variables
 
 #### 5. Download the POSTGRES Explorer Extension in VScode
 Called `PostgreSQL` - PostgreSQL Management Tool
-__Note__: this is a query tool and not a database administration tool
+This will allow you to view tables in the OLTP database and run some simple queries to explore the data. 
+__Note__: this is a query tool and not a database administration tool, its purpose is to see your tables and execute queries
 
 
