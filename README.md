@@ -114,20 +114,22 @@ __Dimension Table: FILM__
 
 In our repository we need to do the following:
 #### 1. Create the engine and session objects in the `database` directory as a `.py` file
-    - Use the `launch.json` file in `.VScode` directory to store all environment variables used to connect to the databases. <u>__It is an automatic FAILED GRADE if you push database credentials to gitHub__</u>
+- Use the `launch.json` file in `.VScode` directory to store all environment variables used to connect to the databases.
+-  <u>__It is an automatic FAILED GRADE if you push database credentials to gitHub__</u>
 <br>    
 #### 2. Define the schema, tables, fields, and relationships using `SQLAlchemy` in the `models` directory as `.py` files. 
-    - Database schema defines the structure of a database system, in terms of tables, columns, fields, and the relationships between them. 
-    - The schema name for the data warehouse is your team name. For example `team_1.some_table`
-    - The name for table names needs to designate which objects are `dimensions` vs `facts`. Example: `team_1.dim_customer` or `team_1.fact_sales`
-    - The table definition needs to be identical to the source data in the OLTP Database. Example if customer.name is `VARCHAR(50)` in the OLTP database, it needs to be the same in the data warehouse
-    <br>   
+- Database schema defines the structure of a database system, in terms of tables, columns, fields, and the relationships between them. 
+- The schema name for the data warehouse is your team name. For example `team_1.some_table`
+- The name for table names needs to designate which objects are `dimensions` vs `facts`. Example: `team_1.dim_customer` or `team_1.fact_sales`
+- The table definition needs to be identical to the source data in the OLTP Database. Example if customer.name is `VARCHAR(50)` in the OLTP database, it needs to be the same in the data warehouse
+<br>   
   
 #### 3. Create an ETL Pipeline Script called `main.py` in the `app` directory that has the following functions:
-    - __setup()__: should initializes database sessions, and create all the schema, tables, fields, and relationships defined in your bases models from the previous step.
-    - __extract()__: should read from the desired database. You are responsible for setting the arguments of the function and determining what type of object should be returned. 
-    - __transform()__: You can define any number of transformation related functions to accomplish the task using any arguments you come up with. Remember it is often better to debug if we isolate certain aspects of our data transformations.  
-    - __load()__: should insert data to the target database (the data warehouse). Again, you have the freedom to determine your own arguments to accomplish this task
+- __setup()__: should initializes database sessions, and create all the schema, tables, fields, and relationships defined in your bases models from the previous step.
+- __extract()__: should read from the desired database. You are responsible for setting the arguments of the function and determining what type of object should be returned. 
+- __transform()__: You can define any number of transformation related functions to accomplish the task using any arguments you come up with. Remember it is often better to debug if we isolate certain aspects of our data transformations.  
+- __load()__: should insert data to the target database (the data warehouse). Again, you have the freedom to determine your own arguments to accomplish this task
+- __teardown()__: Should close any active sessions and open connections to the database. 
 
 ## Environment Setup
 #### 1. Create a new virtual environment
@@ -178,25 +180,5 @@ Example of adding environment variables
 #### 5. Download the POSTGRES Explorer Extension in VScode
 Called `PostgreSQL` - PostgreSQL Management Tool
 __Note__: this is a query tool and not a database administration tool
- 
-### Connecting to the Database 
-__WRITE THIS DOWN SECURELY__
-
-The connection string details a provided in class but will not be posted to github with the rest of the lab material. 
-
-* database (OLTP): `dvdrental`
-* database (DW): `dw` 
-* hostname = `173.61.46.34`
-* port number = `5432`
-
-__Team #1__ - James, Halkes, Lluore and Benjamin, 
-
-> username = dssa_team_1
-> password = StocktonDSSA!
-
-
-__Team #2__ - Brennan, Rodriguez, Weber and Withers
-> username = dssa_team_2
-> password = StocktonDSSA!   
 
 
