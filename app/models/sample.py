@@ -2,6 +2,11 @@ from sqlalchemy import Column, Integer, String, ForeignKey, VARCHAR, Numeric, Da
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
+# Declarative Base
+# https://docs.sqlalchemy.org/en/14/orm/declarative_tables.html
+
+# Relationships
+# https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html#one-to-many
 Base = declarative_base()
 
 class Customer(Base):

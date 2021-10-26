@@ -18,11 +18,11 @@ def setup(engine, schema_name):
     if not engine.dialect.has_schema(engine, schema_name):
         engine.execute(CreateSchema(schema_name))
 
-    # Step 3 - Create Tables, make sure all models are defined and imported see the sample.py in the app/models/ directory 
+    # Create Tables, make sure all models are defined and imported see the sample.py in the app/models/ directory 
     models.Base.metadata.create_all(bind=engine, checkfirst= True)
 
 def extract(table_name, engine):
-    # Extract the customer_list view using pandas and the SQLAlchemy engine object
+    # Extract the tables using pandas and the SQLAlchemy engine object
     df = pd.read_sql_table(table_name, con=engine.connect())
     return df
 
