@@ -1,6 +1,5 @@
 import logging
 import pandas as pd
-from sqlalchemy.sql.expression import column
 import models.sample as models
 from database.dw_session import dwEngine
 from database.oltp_session import oltpEngine
@@ -48,10 +47,13 @@ def get_sum_aggregations(df, by):
     return df
 
 def monthly_rev_base(df_A, df_B, join:str, l_on, r_on):
+    # Building the base fact table
     df = df_A.merge(right=df_B, how=join, left_on=l_on, right_on=r_on)
     df = get_year_from_col(df, column='payment_date')
     df = get_month_from_col(df, column='payment_date')
     df = df[['id', 'year', 'month', 'amount']]
+
+    # Running the aggregations
     tranf_df = get_sum_aggregations(df, by=['id', 'year', 'month'])
     tranf_df = tranf_df.reset_index()
     tranf_df.rename(columns= {
