@@ -74,7 +74,7 @@ __Fact Table: FACT_RENTAL__
 - `count_rentals` A count of the total rentals grouped by all other fields in the table
  
 __Dimension Table: STAFF__
-- `sk_staff` is the `id` field from the staff table
+- `sk_staff` is the `staff_id` field from the staff table
 - `name` a concatenation of `first_name` and `last_name` from the staff table
 - `email` is the `email` field from the staff table
 
