@@ -85,7 +85,7 @@ __Dimension Table: CUSTOMER__
 - `email` is the customer's email 
 
 __Dimension Table: DATE__
-- `sk_date` is unique `rental_date` used as a primary key
+- `sk_date` is unique `rental_date` converted into an integer so it can be used as a primary key 
 - `quarter` is a column formatted from `rental_date` for quarter of the year
 - `year` is a column formatted from `rental_date` for year
 - `month` is a column formatted from `rental_date` for month of the year
