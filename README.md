@@ -93,6 +93,7 @@ __Dimension Table: DATE__
 
 __Dimension Table: STORE__ 
 - `sk_store` the `store_id` from the store table
+- `name` (manager of the store) is the concatenation of `first_name` and `last_name` from the staff table
 - `address` is the `address` field from the address table
 - `city` is the `city` field from the city table
 - `state` is the `district` field from the address table
